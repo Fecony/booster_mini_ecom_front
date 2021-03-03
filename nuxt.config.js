@@ -13,7 +13,27 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
+      {
+        rel: 'preload',
+        as: 'style',
+        href:
+          'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap',
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap',
+        media: 'print',
+        onload: "this.media='all'",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -30,6 +50,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
+    '@teamnovu/nuxt-breaky',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -43,4 +64,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  tailwindcss: {
+    exposeConfig: true,
+  },
+
+  breaky: {
+    position: 'bottomLeft',
+  },
 }
