@@ -24,10 +24,12 @@ module.exports = {
       maxWidth: {
         '1/2': '50%',
       },
+      gridAutoRows: {
+        products: 'minmax(11.25rem, 1fr)',
+      },
     },
     colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
+      ...defaultTheme.colors,
       ...colors,
       itemGray: '#EDEDED',
     },

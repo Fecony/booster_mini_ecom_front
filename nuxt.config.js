@@ -67,6 +67,7 @@ export default {
 
   tailwindcss: {
     exposeConfig: true,
+    jit: true,
   },
 
   breaky: {

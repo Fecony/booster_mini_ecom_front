@@ -2,7 +2,7 @@
   <!-- <Nuxt /> -->
 
   <main class="container flex h-screen py-10 space-x-8 lg:py-20">
-    <div class="relative w-full h-full p-12 bg-gray-100 rounded-20">
+    <div class="relative flex w-full h-full p-12 bg-gray-100 rounded-20">
       <!-- Sidebar -->
       <button class="absolute top-3 left-3" @click="sidebarOpen = !sidebarOpen">
         <svg
@@ -23,7 +23,18 @@
         </svg>
       </button>
 
-      <!-- shopping cart -->
+      <div
+        class="grid grid-flow-row-dense gap-8 overflow-y-auto auto-rows-products"
+        :class="cartOpen ? 'lg:grid-cols-2' : 'lg:grid-cols-3'"
+      >
+        <ProductCard
+          v-for="product in products"
+          :key="product.name"
+          :product="product"
+        />
+      </div>
+
+      <!-- close shopping cart -->
       <button
         v-show="!cartOpen"
         class="absolute top-0 right-0 p-3 transition-colors duration-300 bg-blue-100 rounded-bl-20 rounded-tr-20 group hover:bg-blue-200"
@@ -94,7 +105,7 @@
           </div> -->
 
           <div
-            class="flex flex-col justify-between w-full h-full space-y-3 pb-14"
+            class="flex flex-col justify-between w-full h-full space-y-4 pb-14"
           >
             <div class="flex flex-col space-y-2.5 px-8 pt-8">
               <div class="flex flex-row items-center space-x-3">
@@ -157,12 +168,54 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import products from '~/static/products.json'
 
 export default Vue.extend({
+  asyncData () {
+    return { products }
+  },
   data() {
     return {
       cartOpen: true,
-      sidebarOpen: false, // sidebar with categories
+      sidebarOpen: false,
+      products: [
+          {
+    "name": "Xiaomi Mi Smart Band 5 Black",
+    "type": "big",
+    "price": 55,
+    "short_description": "Go Smart, live more. And more super amazing text about how amazing those smart watches are so you can buy them."
+  },
+  {
+    "name": "Apple Watch Series 6",
+    "type": "regular",
+    "price": 429,
+    "short_description": "On your wrist. Anytime. Anywhere."
+  },
+  {
+    "name": "Samsung Galaxy Watch 3",
+    "type": "regular",
+    "price": 429,
+    "short_description": "Smart watch. Smart life."
+  },
+  {
+    "name": "Xiaomi Mi Robot Vacuum-Mop Pro",
+    "type": "regular",
+    "price": 300,
+    "short_description": "A smart and efficient home helper"
+  },
+  {
+    "name": "Apple iPhone 11 Pro Max",
+    "type": "big",
+    "price": 1189,
+    "short_description": "And then there was Pro."
+  },
+  {
+    "name": "Apple Watch Series 6",
+    "type": "regular",
+    "price": 459,
+    "short_description": "The future of health is on your wrist."
+  }
+      ]
     }
   },
   head: {

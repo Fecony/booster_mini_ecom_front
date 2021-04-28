@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Xiaomi Mi Smart Band 5 Black",
+    "type": "big",
+    "price": 55,
+    "short_description": "Go Smart, live more. And more super amazing text about how amazing those smart watches are so you can buy them."
+  },
+  {
+    "name": "Apple Watch Series 6",
+    "type": "regular",
+    "price": 429,
+    "short_description": "On your wrist. Anytime. Anywhere."
+  },
+  {
+    "name": "Samsung Galaxy Watch 3",
+    "type": "regular",
+    "price": 429,
+    "short_description": "Smart watch. Smart life."
+  },
+  {
+    "name": "Xiaomi Mi Robot Vacuum-Mop Pro",
+    "type": "regular",
+    "price": 300,
+    "short_description": "A smart and efficient home helper"
+  },
+  {
+    "name": "Apple iPhone 11 Pro Max",
+    "type": "big",
+    "price": 1189,
+    "short_description": "And then there was Pro."
+  },
+  {
+    "name": "Apple Watch Series 6",
+    "type": "regular",
+    "price": 459,
+    "short_description": "The future of health is on your wrist."
+  }
+]
